@@ -1,0 +1,13 @@
+{
+  "default": {
+    "format": ["html:./reporting/cucumber-report/Test-Results.html"],
+    "paths": ["test/features/**/*.feature"],
+    "require": [ 
+      "test/step-definitions/**/**/*.steps.ts",
+      "src/hooks/hooks.ts"
+  ],
+  "requireModule": [
+    "ts-node/register"
+  ]
+  }
+}

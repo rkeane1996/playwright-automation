@@ -1,0 +1,8 @@
+node_modules/
+/playwright-report/
+/playwright/.cache/
+reporting/allure
+reporting/cucumber-report
+reporting/video
+reporting/screenshots
+.env
