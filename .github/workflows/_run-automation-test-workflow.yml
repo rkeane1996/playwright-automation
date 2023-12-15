@@ -18,6 +18,7 @@ jobs:
         runs-on: ubuntu-22.04
         permissions: 
             actions: write
+            contents: write
         steps:
         - uses: actions/checkout@v3
 
@@ -39,9 +40,11 @@ jobs:
           
         - name: Execute Tests
           working-directory: ./automation
-          run: npx cucumber-js --tags "${{ inputs.cucumber-tag }}"
+          run: 
+            npx cucumber-js --tags "${{ inputs.cucumber-tag }}"
          
         - name: Upload Video of Tests
+          if: always()
           uses: actions/upload-artifact@v3
           with:
             name: videos-test
@@ -53,6 +56,30 @@ jobs:
           with:
             name: failed-test-screenshots
             path: automation/reporting/screenshots/
+         
+        - name: Load test report history
+          uses: actions/checkout@v3
+          if: always()
+          continue-on-error: true
+          with:
+            ref: gh-pages
+            path: gh-pages
+
+        - name: Build test report
+          uses: simple-elf/allure-report-action@v1.7
+          if: always()
+          with:
+            gh_pages: gh-pages
+            allure_history: allure-history
+            allure_results: automation/reporting/allure/allure-results
+
+        - name: Publish test report
+          uses: peaceiris/actions-gh-pages@v3
+          if: always()
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: allure-history
 
 
 
