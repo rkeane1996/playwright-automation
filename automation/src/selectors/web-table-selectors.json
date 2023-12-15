@@ -1,0 +1,15 @@
+{
+    "addButton": "id=addNewRecordButton",
+    "searchTextBox": "id=searchBox",
+    "editButton": "[title=Edit]",
+    "deleteButton": "[title=Delete]",
+    "registrationFormSelectors":{
+        "firstNameTextBox": "id=firstName",
+        "lastNameTextBox": "id=lastName",
+        "emailTextBox": "id=userEmail",
+        "ageTextBox": "id=age",
+        "salaryTextBox": "id=salary",
+        "departmentTextBox": "id=department",
+        "submitButton": "id=submit"
+    }
+}
