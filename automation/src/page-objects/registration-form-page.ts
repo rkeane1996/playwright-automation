@@ -24,6 +24,7 @@ export class RegistrationFormPage extends WebTablePage {
   private submitButtonSelector;
 
   async addUser(userInfo: User) {
+    await this.page.waitForLoadState();
     await this.clickButton(this.addButton);
     await this.enterText(this.firstNameSelector, userInfo.firstName);
     await this.enterText(this.lastNameSelector, userInfo.lastName);
