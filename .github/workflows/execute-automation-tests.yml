@@ -1,0 +1,19 @@
+name: Trigger Playwright Automation Tests
+on:
+    workflow_dispatch:
+      inputs:
+        cucumber-tags:
+          description: 'Test scenario tags'
+          required: true
+          default: '@WebTableTests'
+          type: string
+
+jobs:
+    execute-tests:
+      name: Run Playwright Automation Tests
+      permissions: 
+        actions: write
+        contents: write
+      uses: ./.github/workflows/_run-automation-test-workflow.yml
+      with:
+        cucumber-tag: ${{ inputs.cucumber-tags }}
