@@ -11,10 +11,20 @@ export class WebTablePage extends BasePage {
     this.deleteButton = webTableSelectors.deleteButton;
   }
 
-  protected addButton;
-  protected searchTextBox;
-  protected editButton;
+  private addButton;
+  private searchTextBox;
+  private editButton;
   private deleteButton;
+
+  async clickAddButton() {
+    await this.waitForSelector(this.addButton);
+    await this.clickButton(this.addButton);
+  }
+
+  async clickEditButton(currentEmail: string) {
+    await this.enterText(this.searchTextBox, currentEmail);
+    await this.clickButton(this.editButton, 500);
+  }
 
   async isUserDisplayedInTable(userAttribute: string) {
     await this.enterText(this.searchTextBox, userAttribute);

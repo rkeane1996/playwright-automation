@@ -24,8 +24,6 @@ export class RegistrationFormPage extends WebTablePage {
   private submitButtonSelector;
 
   async addUser(userInfo: User) {
-    await this.page.waitForLoadState();
-    await this.clickButton(this.addButton);
     await this.enterText(this.firstNameSelector, userInfo.firstName);
     await this.enterText(this.lastNameSelector, userInfo.lastName);
     await this.enterText(this.emailSelector, userInfo.email);
@@ -33,14 +31,12 @@ export class RegistrationFormPage extends WebTablePage {
     await this.enterText(this.salarySelector, userInfo.salary.toString());
     await this.enterText(this.departmentSelector, userInfo.department);
     await this.clickButton(this.submitButtonSelector);
-    await this.page.waitForLoadState();
+    await this.waitForLoadState();
   }
 
-  async editUserEmail(currentEmail: string, newEmail: string) {
-    await this.enterText(this.searchTextBox, currentEmail);
-    await this.clickButton(this.editButton, 500);
+  async editUserEmail(newEmail: string) {
     await this.enterText(this.emailSelector, newEmail);
     await this.clickButton(this.submitButtonSelector);
-    await this.page.waitForLoadState();
+    await this.waitForLoadState();
   }
 }
