@@ -1,7 +1,6 @@
 import { Locator, Page } from '@playwright/test';
-import { PageActions } from './playwright-actions';
 
-export class BasePage implements PageActions {
+export class BasePage {
   protected page: Page;
   [key: string]: any;
 
