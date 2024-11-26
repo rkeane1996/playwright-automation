@@ -1,5 +1,8 @@
 name: Trigger Playwright Automation Tests
 on:
+    schedule:
+    # Run at 00:00 UTC every day
+    - cron: "0 19 * * *"
     workflow_dispatch:
       inputs:
         cucumber-tags:
