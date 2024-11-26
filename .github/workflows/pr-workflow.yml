@@ -23,7 +23,9 @@ jobs:
         uses: ./.github/workflows/_check-code-workflow.yml
     
     run_smoke_tests:
-        needs: check_code
+        needs: 
+            - check_code
+            - pr_validation
         name: Run Smoke Tests
         permissions: 
             actions: write
