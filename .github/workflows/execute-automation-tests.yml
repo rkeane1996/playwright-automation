@@ -19,4 +19,4 @@ jobs:
         contents: write
       uses: ./.github/workflows/_run-automation-test-workflow.yml
       with:
-        cucumber-tag: ${{ inputs.cucumber-tags }}
+        cucumber-tag: ${{ inputs.cucumber-tags || '@WebTableTests' }}
