@@ -1,1 +1,1 @@
-[]
+[{"uid":"c0a6f4cd632aec2f","name":"Delete User in Web Table","time":{"start":1734290305112,"stop":1734290309098,"duration":3986},"status":"passed","severity":"normal"},{"uid":"21649f6c009ba872","name":"Add User To Web Table","time":{"start":1734290297373,"stop":1734290300681,"duration":3308},"status":"passed","severity":"normal"},{"uid":"4655ea8ff0800e32","name":"Edit User In Web Table","time":{"start":1734290300682,"stop":1734290305111,"duration":4429},"status":"passed","severity":"normal"}]
