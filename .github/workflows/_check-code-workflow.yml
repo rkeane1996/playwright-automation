@@ -13,7 +13,7 @@ jobs:
                 working-directory: ./automation
         steps:
         - name: Checkout Branch
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
 
         - name: Set up node
           uses: ./.github/actions/setup-node
