@@ -24,8 +24,7 @@ jobs:
 
         - name: Set Up Node
           uses: ./.github/actions/setup-node
-          with:
-            working-directory: ./automation
+          
         
         - name: Generate .ENV file
           working-directory: ./automation
