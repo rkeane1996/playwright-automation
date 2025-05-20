@@ -6,6 +6,7 @@ import { generateEmail } from '../../../../src/util/faker';
 
 When('User is added to Web Table', async function (this: CustomWorld) {
   await this.page.goto(`${process.env.WEBSITE_URL!}/webtables`);
+  await this.page.waitForLoadState();
   const registrationFormPage = new RegistrationFormPage(this.page);
   await registrationFormPage.clickAddButton();
   await registrationFormPage.addUser(this.user);
@@ -16,6 +17,7 @@ When('User Email Is Edited', async function (this: CustomWorld) {
   const registrationFormPage = new RegistrationFormPage(this.page);
   await registrationFormPage.clickEditButton(this.user.email);
   await registrationFormPage.editUserEmail(newEmail);
+  await this.page.waitForLoadState();
   this.user.email = newEmail;
 });
 
