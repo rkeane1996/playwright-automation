@@ -1,5 +1,6 @@
 {
   "default": {
+    "retry": 3,
     "format": ["./reporting/reporter.mjs","html:./reporting/cucumber-report/Test-Results.html"],
     "paths": ["test/features/**/*.feature"],
     "require": [ 

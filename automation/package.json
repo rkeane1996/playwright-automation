@@ -10,16 +10,16 @@
     "check:lint": "eslint \"src/**/*.ts\" \"test/step-definitions/**/*.steps.ts\" --max-warnings=0",
     "check:lint:fix": "npm run check:lint -- --fix",
     "-------- Run Tests --------": "",
-    "run:tests": "npx cucumber-js --tags \"@WebTableTests\"",
-    "run:tests:report": "npx cucumber-js --tags \"@WebTableTests\" && npm run allure:create && npm run allure: open",
+    "run:tests": "npx cucumber-js --tags \"@WebTableTests\" -f @cucumber/pretty-formatter",
+    "run:tests:report": "npx cucumber-js --tags \"@WebTableTests\" -f @cucumber/pretty-formatter && npm run allure:create && npm run allure: open",
     "-------- Generate Report --------": "",
     "allure:create": "allure generate automation/reporting/allure/allure-results -o automation/reporting/allure/allure-report --clean",
-    "allure:open":"allure open automation/reporting/allure/allure-report"
+    "allure:open": "allure open automation/reporting/allure/allure-report"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.52.0",
     "@types/node": "^20.7.1",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@cucumber/cucumber": "^10.0.1",
+    "@cucumber/pretty-formatter": "^1.0.1",
     "@faker-js/faker": "^8.2.0",
     "dotenv": "^16.3.1",
     "eslint-config-prettier": "^9.1.0",
