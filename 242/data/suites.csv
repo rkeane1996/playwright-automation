@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat Jul 12 19:20:58 GMT 2025","Sat Jul 12 19:21:03 GMT 2025","5337","","Add User To Web Table","","","","Add User To Web Table",""
-"failed","Sat Jul 12 19:21:15 GMT 2025","Sat Jul 12 19:21:19 GMT 2025","3986","","Edit User In Web Table","","","","Edit User In Web Table",""
-"passed","Sat Jul 12 19:21:19 GMT 2025","Sat Jul 12 19:21:22 GMT 2025","2857","","Delete User in Web Table","","","","Delete User in Web Table",""
