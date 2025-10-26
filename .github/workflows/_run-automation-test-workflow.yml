@@ -16,6 +16,7 @@ jobs:
     execute-automation-tests:
         name: Execute Playwright Automation Tests
         runs-on: ubuntu-22.04
+        timeout-minutes: 5
         permissions: 
             actions: write
             contents: write
